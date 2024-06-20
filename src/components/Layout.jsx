@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../components/Header";
+import Header from "./Header";
 
 const Layout = ({ children }) => {
   return (
-    <main className=" overflow-x-hidden z-10">
+    <main className="w-full bg-white ">
       <Header />
       {children}
     </main>

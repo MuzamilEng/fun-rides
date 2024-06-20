@@ -1,14 +1,13 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
-import LandingPage from "./app/pages/LandingPage";
-import { Routes, Route } from "react-router-dom";
-
-const App = () => {
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<LandingPage />} />
-    </Routes>
+    <main className="w-full overflow-x-hidden">
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </main>
   );
-};
-
-export default App;
+}

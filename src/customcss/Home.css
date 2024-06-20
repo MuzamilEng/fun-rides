@@ -1,0 +1,22 @@
+/* Customize the dots */
+.slick-dots li button:before {
+    font-size: 1.25rem; /* Increase the size of the dots (20px) */
+    color: white; /* Set the color of the dots */
+  }
+  
+  .slick-dots {
+    position: absolute;
+    bottom: 20px; /* Position dots over the images */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .slick-dots li {
+    margin: 0 5px;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #fff; /* Active dot color */
+  }
+  
