@@ -1,0 +1,19 @@
+name: Build and deploy
+
+permissions: write-all
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-docker-image:
+    name: Buld docker images
+    uses: ./.github/workflows/build-docker-images.yaml
+    secrets: inherit
+
+  deploy-app:
+    name: Deploy jovem to staging
+    uses: cheque-livro/devops/.github/workflows/deploy-caprover.yaml@prd
+    secrets: inherit
+    needs: build-docker-image
