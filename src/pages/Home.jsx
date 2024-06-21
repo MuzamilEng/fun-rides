@@ -1,64 +1,49 @@
 import React from "react";
 import Layout from "../components/Layout";
-import Slider from "react-slick";
+import Header from "../components/Header";
+import AboutSection from "../components/AboutSection";
+import Services from "../components/Services";
+import Gallery from "../components/Gallery";
+import Team from "../components/Team";
+import LatestEvent from "../components/LatestEvent";
+import Blog from "../components/Blog";
+import Updates from "../components/Updates";
 
-import Clients from "../components/Clients";
-const CustomPrevArrow = (props) => (
-  <button {...props} className="slick-arrow slick-prev">
-    Previous
-  </button>
-);
-
-const CustomNextArrow = (props) => (
-  <button {...props} className="slick-arrow slick-next">
-    Next
-  </button>
-);
 const Home = () => {
-  const slideImages = [
-    { src: "/img/fixedbg.jpg" },
-    { src: "/img/fixedbg2.jpg" },
-    { src: "/img/fixedbg3.jpg" },
-  ];
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    fade: true, // Enable fade effect
-    arrows: true, // Enable arrows
-    appendDots: (dots) => (
-      <div style={{ position: "absolute", bottom: "20px", width: "100%" }}>
-        <ul style={{ margin: "0px" }}> {dots} </ul>
-      </div>
-    ),
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
-  };
-
   return (
-    <Layout>
-      <main>
-        <Slider {...settings}>
-          {slideImages.map((image, index) => (
-            <figure key={index} className="w-full h-[43vw] relative">
-              <img
-                src={image.src}
-                alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </figure>
-          ))}
-        </Slider>
-        <section className="p-[2vw] ">
-          <Clients />
+    <main>
+      <section
+        className="w-full "
+        style={{
+          backgroundImage: "url(/img/home.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "100vh",
+
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <section className="w-full">
+          <h1 className="text-[#fe5f97] font-bold text-[5vw] ml-[35vw] mt-[4vw]">
+            WELL COME
+          </h1>
+          <p className="text-[#113769] font-bold text-[3vw] ml-[30.5vw] mt-[4vw]">
+            MAGIC SPACE FOR HIDREN
+          </p>
+          <button className="bg-[#32cfbc] ml-[45vw] mt-[5vw] transition-all duration-300 hover:bg-blue-900 text-white font-bold p-[1vw] rounded-full">
+            DISCOVER NOW
+          </button>
         </section>
-      </main>
-    </Layout>
+      </section>
+
+      <AboutSection />
+      <Services />
+      <Gallery />
+      <Team />
+      <LatestEvent />
+      <Blog />
+      <Updates />
+    </main>
   );
 };
 

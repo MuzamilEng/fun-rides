@@ -1,62 +1,87 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Facebook, Twitter, Instagram, Call } from "@mui/icons-material";
+import { Box, IconButton } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
+import { linkData } from "../data";
 
 const Header = () => {
-  const [isSticky, setIsSticky] = useState(false);
-
-  const data = [
-    { title: "Home", url: "/" },
-    { title: "About us", url: "/about us" },
-    { title: "Go karts", url: "/go karts" },
-    { title: "Zorb Balls", url: "/zorb balls" },
-    { title: "Face Painting", url: "/face painting" },
-    { title: "Inflatable Dart Boards", url: "/inflatable dart boards" },
-    { title: "Penalty Shoot Out", url: "/penalty shoot out" },
-    { title: "Wall Painting", url: "/wall painting" },
-    { title: "Contact Us", url: "/contact us" },
-  ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // Get the current location using useLocation hook from react-router-dom
+  const location = useLocation();
 
   return (
-    <header className="w-full mt-[-3vw]">
-      <nav
-        className={`bg-gradient-to-b  from-gradient-start to-gradient-end p-[1vw] w-full z-50 transition-all duration-300 mt-[2vw]  flex items-center `}
-      >
-        <>
-          <figure className="w-full max-w-[15vw] pt-[1vw]">
-            <img src="/img/logo.png" alt="logo" className="w-full" />
-          </figure>
-          <ul className="flex gap-[2vw] justify-center mt-[0.3vw] pt-[1vw]">
-            {data.map((item) => (
-              <>
-                <li key={item.title} className="">
-                  <Link
-                    to={item.url}
-                    className="pl-[1vw] text-white font-medium text-[1.1vw]"
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              </>
+    <header>
+      <section className="flex justify-between w-full max-w-[90vw] m-auto">
+        <Box display="flex" alignItems="center" gap={1}>
+          <IconButton
+            component="a"
+            href="tel:112334555"
+            sx={{ color: "#fe5f97" }}
+          >
+            <Call />
+          </IconButton>
+          <p className="text-[#fe5f97] font-bold transition-all duration-300 hover:text-black hover:cursor-pointer text-[1.4vw]">
+            (1) 12334555
+          </p>
+        </Box>
+        <Box display="flex" gap={1}>
+          <IconButton
+            component="a"
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: "#fe5f97" }}
+          >
+            <Facebook />
+          </IconButton>
+          <IconButton
+            component="a"
+            href="https://www.twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: "#fe5f97" }}
+          >
+            <Twitter />
+          </IconButton>
+          <IconButton
+            component="a"
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: "#fe5f97" }}
+          >
+            <Instagram />
+          </IconButton>
+        </Box>
+      </section>
+      <section className="flex ml-[42vw] gap-[30.5vw] items-center mt-[3vw]">
+        <figure className="w-full max-w-[14vw]">
+          <img src="/img/kidLogo.png" alt="kig logo" className="w-full" />
+        </figure>
+        <button className="bg-[#32cfbc] transition-all duration-300 hover:bg-blue-900 text-white font-bold p-[1vw] rounded-full">
+          RESERVATION
+        </button>
+      </section>
+      <section>
+        <nav className="w-full flex justify-center mt-[3vw]">
+          <div className="flex gap-[5vw]">
+            {linkData?.map((link, index) => (
+              <Link
+                key={index}
+                to={link.url}
+                className={`text-[#fe5f97] text-[1.3vw] font-bold transition-all duration-300 rounded-full ${
+                  location.pathname === link.url
+                    ? "bg-[#fe5f97] text-white"
+                    : ""
+                }`}
+              >
+                <p className="py-[0.6vw] px-[2vw] text-[#255ea8] hover:text-white hover:bg-[#fe5f97] transition-all duration-300 hover:rounded-full">
+                  {link.title}
+                </p>
+              </Link>
             ))}
-          </ul>
-        </>
-      </nav>
+          </div>
+        </nav>
+      </section>
     </header>
   );
 };

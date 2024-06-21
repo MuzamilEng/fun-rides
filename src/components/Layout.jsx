@@ -3,10 +3,10 @@ import Header from "./Header";
 
 const Layout = ({ children }) => {
   return (
-    <main className="w-full bg-white ">
+    <>
       <Header />
       {children}
-    </main>
+    </>
   );
 };
 
