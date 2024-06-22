@@ -9,14 +9,12 @@ import BlogPage from "./pages/BlogPage";
 import Contact from "./pages/Contact";
 export default function App() {
   return (
-    <main className="w-full overflow-x-hidden">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </main>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/events" element={<Events />} />
+      <Route path="/gallery" element={<GalleryPage />} />
+      <Route path="/blog" element={<BlogPage />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/Layout";
+
 import Header from "../components/Header";
 import AboutSection from "../components/AboutSection";
 import Services from "../components/Services";
@@ -11,7 +11,7 @@ import Updates from "../components/Updates";
 
 const Home = () => {
   return (
-    <main>
+    <main className="w-full">
       <section
         className="w-full "
         style={{

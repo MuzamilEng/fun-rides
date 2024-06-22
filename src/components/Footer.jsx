@@ -11,9 +11,9 @@ const Footer = () => {
   return (
     <footer className="bg-[#15427E] text-white py-10">
       <section className="container mx-auto px-4">
-        <div className="flex gap-[10vw] items-start">
-          <div className="mr-8">
-            <figure className="mt-[2vw] w-full max-w-[25vw]">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-[10vw] items-start">
+          <div className="lg:mr-8">
+            <figure className="mt-8 lg:mt-[2vw] w-full max-w-[25vw]">
               <img
                 src="/img/footerLogo.png"
                 alt="Kiddaboo"
@@ -25,6 +25,7 @@ const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-white hover:text-gray-300 transition duration-300"
               >
                 <FacebookIcon fontSize="small" />
               </a>
@@ -32,6 +33,7 @@ const Footer = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-white hover:text-gray-300 transition duration-300"
               >
                 <TwitterIcon fontSize="small" />
               </a>
@@ -39,17 +41,20 @@ const Footer = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-white hover:text-gray-300 transition duration-300"
               >
                 <InstagramIcon fontSize="small" />
               </a>
             </div>
           </div>
-          <nav className="flex flex-wrap gap-[10vw] w-full mt-4 ml-[2vw]">
+          <nav className="flex flex-col sm:flex-row flex-wrap gap-8 lg:gap-[10vw] w-full mt-8 lg:mt-4">
             {footerData?.map((section, index) => (
               <article key={index} className="px-4">
-                <h3 className="font-bold mb-4 text-[2vw]">{section.title}</h3>
+                <h3 className="font-bold mb-4 text-xl lg:text-[2vw]">
+                  {section.title}
+                </h3>
                 {section.links && (
-                  <ul className="">
+                  <ul>
                     {section.links.map((link, linkIndex) => (
                       <li key={linkIndex} className="mb-2">
                         <Link to={link.url} className="hover:underline">
@@ -60,13 +65,13 @@ const Footer = () => {
                     {section.links.map((item, itemIndex) => (
                       <li key={itemIndex} className="mb-2">
                         {item.address && (
-                          <p>
+                          <p className="flex items-center">
                             <LocationOnIcon className="mr-2" />
                             {item.address}
                           </p>
                         )}
                         {item.email && (
-                          <p>
+                          <p className="flex items-center">
                             <EmailIcon className="mr-2" />
                             Email: {item.email}
                           </p>
@@ -90,7 +95,7 @@ const Footer = () => {
           </nav>
         </div>
       </section>
-      <p className="text-white mt-[5vw] ml-[3vw]">
+      <p className="text-white mt-8 lg:mt-[5vw] ml-4 lg:ml-[3vw] text-center lg:text-left">
         Copyright 2018 Kiddaboo. All Rights Reserved. Privacy Policy. Designed
         by MotoCMS.com
       </p>

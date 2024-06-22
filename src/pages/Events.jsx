@@ -3,25 +3,25 @@ import { servicesData } from "../data";
 
 const Events = () => {
   const btnColors = [
-    "bg-[#fe5f97] bg-opacity-100", // Adjusted opacity to 50%
-    "bg-[#32cfbc] bg-opacity-100", // Adjusted opacity to 50%
-    "bg-[#255ea8] bg-opacity-100", // Adjusted opacity to 50%
+    "bg-[#fe5f97] bg-opacity-100",
+    "bg-[#32cfbc] bg-opacity-100",
+    "bg-[#255ea8] bg-opacity-100",
   ];
 
   return (
-    <main className="bg-[#255ea8] overflow-y-hidden px-[2vw] pt-[5vw] pb-[2vw] mt-[1vw]">
+    <main className="bg-[#255ea8] overflow-x-hidden px-[2vw] pt-[5vw] pb-[2vw] mt-[1vw]">
       <h1 className="text-white font-bold text-[10vw] lg:text-[5vw] text-center mb-[5vw] lg:mb-[2vw]">
         Events
       </h1>
-      <section className="flex flex-wrap lg:flex-row flex-col  gap-[5vw] lg:gap-[3vw] justify-center">
+      <section className="flex flex-wrap gap-[5vw] lg:gap-[3vw] justify-center">
         {servicesData?.map((service, index) => (
           <div
-            className="flex flex-col items-center justify-center relative"
+            className="flex flex-col items-center justify-center relative w-full sm:w-auto"
             key={index}
           >
             <img
               src={service.img}
-              className="lg:w-[20vw] lg:h-[20vw] object-cover rounded-md"
+              className="w-full sm:w-[20vw] sm:h-[20vw] object-cover rounded-md"
               alt={service.btn}
             />
             <div className="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center rounded-md">

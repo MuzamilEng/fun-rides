@@ -9,9 +9,10 @@ const Header = () => {
   // Get the current location using useLocation hook from react-router-dom
   const location = useLocation();
 
-  // Use useMediaQuery hook to determine if the screen size is small
-  const isSmallScreen = useMediaQuery("(max-width: 600px)");
+  // Use useMediaQuery hook to determine if the screen size is small or medium
+  const isSmallOrMediumScreen = useMediaQuery("(max-width: 1024px)");
   const { toggleDrawer } = useGlobalContext();
+
   return (
     <header>
       <section className="flex justify-between w-full max-w-[90vw] m-auto">
@@ -55,7 +56,7 @@ const Header = () => {
           >
             <Instagram />
           </IconButton>
-          {isSmallScreen && (
+          {isSmallOrMediumScreen && (
             <IconButton sx={{ color: "#fe5f97" }} onClick={toggleDrawer(true)}>
               <Menu />
             </IconButton>

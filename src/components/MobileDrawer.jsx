@@ -54,7 +54,7 @@ export default function MobileDrawer() {
   return (
     <div>
       <SwipeableDrawer
-        anchor="right" // Change anchor to "right"
+        anchor="left" // Change anchor to "right"
         open={state.top} // You may want to rename this state to be more descriptive, like state.right
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
