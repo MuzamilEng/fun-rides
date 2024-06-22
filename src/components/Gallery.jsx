@@ -11,8 +11,8 @@ const Gallery = () => {
   ];
 
   return (
-    <main className="bg-[#255ea8] pt-[5vw] pb-[2vw]">
-      <h1 className="text-white font-bold text-[7vw] text-center mb-[2vw]">
+    <main className="bg-[#255ea8] pt-[5vw] pb-[2vw] overflow-x-hidden">
+      <h1 className="text-white font-bold text-[10vw] lg:text-[7vw] text-center mb-[5vw] lg:mb-[2vw]">
         Gallery
       </h1>
       <section className="flex gap-[2vw] justify-center">

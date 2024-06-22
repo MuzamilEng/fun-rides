@@ -3,40 +3,45 @@ import EventIcon from "@mui/icons-material/Event"; // Import Event icon from Mui
 import PanoramaIcon from "@mui/icons-material/Panorama";
 import Pagination from "../components/Pagination";
 import { blogPageData } from "../data";
+import MobileDrawer from "../components/MobileDrawer";
+import { useGlobalContext } from "../context/GlobalState";
 
 const BlogPage = () => {
+  const { toggleDrawer } = useGlobalContext();
   return (
     <main className="bg-[#255ea8] overflow-y-hidden pt-[5vw] pb-[2vw] mt-[1vw]">
-      <h1 className="text-white font-bold text-[6vw] ml-[8.5vw]">Blog</h1>
+      <h1 className="text-white font-bold text-[10vw] lg:text-[6vw] ml-[5vw] lg:ml-[8.5vw]">
+        Blog
+      </h1>
 
       <section className="flex w-full justify-center gap-[10vw] items-start">
-        <article className="w-full max-w-[50vw]">
+        <article className="w-full px-[3vw] lg:px-[vw] lg:max-w-[50vw] mt-[10vw] lg:mt-[vw]">
           {blogPageData?.map((elem, ind) => (
-            <div className="flex flex-col gap-[2vw]" key={ind}>
+            <div className="flex flex-col gap-[5vw] lg:gap-[2vw]" key={ind}>
               <div className="flex items-center gap-[0.5vw]">
-                <EventIcon style={{ fontSize: "2vw", color: "white" }} />{" "}
+                <EventIcon className="lg:text-[2vw] text-[3vw] text-white" />{" "}
                 {/* Calendar icon */}
-                <p className="text-white font-medium text-[1.5vw]">
+                <p className="text-white font-medium text-[4vw] lg:text-[1.5vw]">
                   {elem.date}
                 </p>
               </div>
-              <figure>
-                <img src={elem.img} alt="" className="w-full" />
+              <figure className="">
+                <img src={elem.img} alt="img" className="w-full" />
               </figure>
-              <p className="text-white text-[1vw] w-full max-w-[50vw]">
+              <p className="text-white text-[3vw] lg:text-[1vw] w-full lg:max-w-[50vw]">
                 {elem.desc}
               </p>
               <div>
-                <button className="bg-[#fe5f97] transition-all duration-300 hover:bg-blue-900 text-white font-bold py-[1vw] px-[2vw] rounded-full">
+                <button className="bg-[#fe5f97] transition-all duration-300 hover:bg-blue-900 text-white font-medium py-[2vw] px-[3vw] lg:py-[1vw] lg:px-[2vw] rounded-full">
                   Read more
                 </button>
               </div>
-              <div className="mt-[2vw] border-solid border-[2px] mb-[1vw] border-b-white"></div>
+              <div className="mt-[2vw] border-solid border-[1px] lg:border-[2px] mb-[4vw] lg:mb-[1vw] border-b-white"></div>
             </div>
           ))}
           <Pagination />
         </article>
-        <aside>
+        <aside className="hidden lg:block">
           <h1 className="text-white font-bold text-[3vw]">Recent Posts</h1>
           <article className="flex flex-col gap-[2vw]">
             {blogPageData?.map((elem, ind) => (

@@ -11,21 +11,19 @@ const Pagination = () => {
         <>
           <div
             key={ind}
-            className="text-white bg-[#fe5f97] h-[2vw] w-[2vw] flex items-center justify-center"
+            className="text-white bg-[#fe5f97] h-[6vw] w-[6vw] lg:h-[2vw] lg:w-[2vw] flex items-center justify-center"
           >
-            <p className="text-center font-medium text-[1.3vw]">{elem}</p>
+            <p className="text-center font-medium text-[3vw] lg:text-[1.3vw]">
+              {elem}
+            </p>
           </div>
         </>
       ))}
-      <div className="text-white bg-[#fe5f97] h-[2vw] w-[2vw] flex items-center justify-center">
-        <DoubleArrowIcon
-          style={{ fontSize: "1vw", color: "white", cursor: "pointer" }}
-        />
+      <div className="text-white bg-[#fe5f97] h-[6vw] w-[6vw] lg:text-[1vw] text-[2vw] lg:h-[2vw] lg:w-[2vw] flex items-center justify-center">
+        <DoubleArrowIcon style={{ color: "white", cursor: "pointer" }} />
       </div>
-      <div className="text-white bg-[#fe5f97] h-[2vw] w-[2vw] flex items-center justify-center">
-        <ArrowForwardIcon
-          style={{ fontSize: "1vw", color: "white", cursor: "pointer" }}
-        />
+      <div className="text-white bg-[#fe5f97] h-[6vw] w-[6vw] lg:text-[1vw] text-[2vw] lg:h-[2vw] lg:w-[2vw] flex items-center justify-center">
+        <ArrowForwardIcon style={{ color: "white", cursor: "pointer" }} />
       </div>
     </main>
   );
