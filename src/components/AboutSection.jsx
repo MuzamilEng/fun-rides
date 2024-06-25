@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
@@ -23,8 +24,10 @@ const AboutSection = () => {
             Do in Los Angeles with Kids, After School Classes, Birthday Party
             Places, and so much more.
           </p>
-          <button className="bg-[#fe5f97] transition-all duration-300 hover:bg-blue-900 text-white font-bold p-[1vw] rounded-full">
+         <button className="bg-[#fe5f97] transition-all duration-300 hover:bg-blue-900 text-white font-bold p-[1vw] rounded-full">
+         <Link to="/blog" className="w-full">
             More info
+         </Link>
           </button>
         </article>
       </section>

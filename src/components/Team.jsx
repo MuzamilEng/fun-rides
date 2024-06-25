@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "react-slick"; // Import React Slick
 import { teamData } from "../data";
+import { Link } from "react-router-dom";
 
 const Team = () => {
   const settings = {
@@ -40,9 +41,11 @@ const Team = () => {
           well-educated teachers will turn the educational process into a great
           and fun holiday for your children!
         </p>
-        <button className="bg-transparent border-[2px] border-white transition-all duration-300 hover:bg-[#32cfbc] mt-[3vw] text-white font-bold py-[0.8vw] px-[3vw] lg:px-[2vw] rounded-full">
+       <Link to="/contact">
+       <button className="bg-transparent border-[2px] border-white transition-all duration-300 hover:bg-[#32cfbc] mt-[3vw] text-white font-bold py-[0.8vw] px-[3vw] lg:px-[2vw] rounded-full">
           contact us
         </button>
+       </Link>
       </article>
     </main>
   );

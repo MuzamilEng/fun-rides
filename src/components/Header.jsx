@@ -68,9 +68,11 @@ const Header = () => {
           <h1 className="text-[#fe5f97] font-bold text-[5vw] lg:text-[2vw]">Funrides Leeds</h1>
           {/* <img src="/img/kidLogo.png" alt="kig logo" className="w-full" /> */}
         </figure>
-        <button className="bg-[#32cfbc] hidden lg:block transition-all duration-300 hover:bg-blue-900 text-white font-bold p-[1vw] rounded-full">
+       <Link to="/contact">
+       <button className="bg-[#32cfbc] hidden lg:block transition-all duration-300 hover:bg-blue-900 text-white font-bold p-[1vw] rounded-full">
           RESERVATION
         </button>
+       </Link>
       </section>
       <section className="hidden lg:block">
         <nav className="w-full flex justify-center mt-[3vw]">

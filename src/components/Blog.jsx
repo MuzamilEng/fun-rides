@@ -3,6 +3,7 @@ import Slider from "react-slick"; // Import React Slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { blogData } from "../data";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   const settings = {
@@ -44,7 +45,9 @@ const Blog = () => {
             ))}
           </Slider>
           <button className="bg-[#fe5f97] transition-all duration-300 hover:bg-blue-900 text-white font-bold py-[3vw] px-[5vw] lg:p-[1vw] rounded-full mt-[4vw] lg:mt-[2vw]">
+            <Link to="/blog">
             More info
+            </Link>
           </button>
         </article>
       </section>
