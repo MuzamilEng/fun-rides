@@ -64,8 +64,9 @@ const Header = () => {
         </Box>
       </section>
       <section className="flex ml-[35vw] lg:ml-[42vw] gap-[30.5vw] items-center mt-[10vw] lg:mt-[3vw]">
-        <figure className="w-full max-w-[35vw] lg:max-w-[14vw]">
-          <img src="/img/kidLogo.png" alt="kig logo" className="w-full" />
+        <figure className="w-full max-w-[35vw] lg:max-w-[20vw]">
+          <h1 className="text-[#fe5f97] font-bold text-[5vw] lg:text-[2vw]">Funrides Leeds</h1>
+          {/* <img src="/img/kidLogo.png" alt="kig logo" className="w-full" /> */}
         </figure>
         <button className="bg-[#32cfbc] hidden lg:block transition-all duration-300 hover:bg-blue-900 text-white font-bold p-[1vw] rounded-full">
           RESERVATION

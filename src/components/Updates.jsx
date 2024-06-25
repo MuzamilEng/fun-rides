@@ -12,7 +12,7 @@ const Updates = () => {
             type="text"
             placeholder="YOUR EMAIL ADDRESS"
             name=""
-            className="w-full max-w-[90vw] border-[1px] border-white text-white placeholder:white bg-transparent p-[2vw] lg:p-[0.5vw] rounded-full focus:outline-none"
+            className="w-full max-w-[90vw] border-[1px] border-white text-white placeholder:white bg-transparent p-[2vw] lg:p-[0.7vw] rounded-full focus:outline-none"
           />
         </form>
       </section>

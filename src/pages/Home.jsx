@@ -28,7 +28,7 @@ const Home = () => {
             WELL COME
           </h1>
           <p className="text-[#113769] font-bold text-[5vw] lg:text-[3vw] ml-[19vw] lg:ml-[30.5vw] mt-[4vw]">
-            MAGIC SPACE FOR HIDREN
+            MAGIC SPACE FOR CHIDREN
           </p>
           <button className="bg-[#32cfbc]  ml-[30vw] lg:ml-[45vw] mt-[10vw] lg:mt-[5vw] transition-all duration-300 hover:bg-blue-900 text-white font-bold py-[1vw] px-[4vw] lg:p-[1vw] rounded-full">
             DISCOVER NOW
